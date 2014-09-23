@@ -1,10 +1,10 @@
 #! python
 
-import tornado.httpserver
 import tornado.web
 from email.message import EmailMessage
 from tornado import gen
 from tornado.options import options
+from tornado.ioloop import IOLoop
 from tornado_smtp.client import TornadoSMTP
 
 FROM_ADDR     = '<your@email.address>'
@@ -23,11 +23,6 @@ class TestApplication(tornado.web.Application):
         return smtp
 
 class MainHandler(tornado.web.RequestHandler):
-    @gen.coroutine
-    def get_smtp_client(self):
-        smtp = yield self.application.get_smtp_client_async()
-        return smtp
-
     def get(self):
         self.render('index.html')
 
@@ -39,16 +34,15 @@ class MainHandler(tornado.web.RequestHandler):
         msg['From']    = FROM_ADDR
         msg.set_content(self.get_argument('message'))
         
-        smtp = yield self.get_smtp_client()
+        smtp = yield self.application.get_smtp_client()
         smtp.send_message(msg)
 
         self.render('index.html')
 
 def main():
-    tornado.options.parse_command_line()
-    app    = TestApplication([ (r'/', MainHandler) ])
-    server = tornado.httpserver.HTTPServer(app)
-    server.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    options.parse_command_line()
+    app = TestApplication([ (r'/', MainHandler) ])
+    app.listen(options.port)
+    IOLoop.instance().start()
 
 main()
