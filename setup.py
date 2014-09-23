@@ -20,8 +20,11 @@ setup(
     packages         = ['tornado_smtp'],
     classifiers      = [
         'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Environment :: Web Environment',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Communications :: Email',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4'
