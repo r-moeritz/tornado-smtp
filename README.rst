@@ -8,28 +8,28 @@ Usage
 
 .. code:: python
 
-import tornado.web
-from tornado import gen
-from email.message import EmailMessage
-from tornado_smtp.client import TorndoSMTP
+    import tornado.web
+    from tornado import gen
+    from email.message import EmailMessage
+    from tornado_smtp.client import TorndoSMTP
 
-class MailHandler(tornado.web.RequestHandler):
-    @gen.coroutine
-    def get(self):
-        smtp = TornadoSMTP('<smtp-server-address>')
-        yield smtp.starttls()
-        yield smtp.login('<username>', '<password>')
+    class MailHandler(tornado.web.RequestHandler):
+        @gen.coroutine
+        def get(self):
+            smtp = TornadoSMTP('<smtp-server-address>')
+            yield smtp.starttls()
+            yield smtp.login('<username>', '<password>')
 
-        msg = EmailMessage()
-        msg['Subject'] = 'Test'
-        msg['To']      = '<destination-address>'
-        msg['From']    = '<sender-address>'
-        msg.set_content('Message body')
+            msg = EmailMessage()
+            msg['Subject'] = 'Test'
+            msg['To']      = '<destination-address>'
+            msg['From']    = '<sender-address>'
+            msg.set_content('Message body')
         
-        smtp = yield self.get_smtp_client()
-        smtp.send_message(msg)
+            smtp = yield self.get_smtp_client()
+            smtp.send_message(msg)
 
-        self.render('response.html')
+            self.render('response.html')
 
 Status
 ------
