@@ -7,6 +7,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "tornado-smtp", "tornado-smt
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "tests", "tests.pyproj", "{EFBE6A5B-BD88-4EDC-BA9A-13D6DE531254}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "setup", "setup.pyproj", "{F31EE5D0-0111-45EB-8BE5-099F33074FA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,8 @@ Global
 		{A0C86C61-5CCF-4561-87D7-1129EAB93F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFBE6A5B-BD88-4EDC-BA9A-13D6DE531254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EFBE6A5B-BD88-4EDC-BA9A-13D6DE531254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31EE5D0-0111-45EB-8BE5-099F33074FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31EE5D0-0111-45EB-8BE5-099F33074FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,6 +18,7 @@ setup(
     license          = 'MIT',
     keywords         = ['smtp', 'email', 'mail', 'tornado', 'async'],
     packages         = ['tornado_smtp'],
+    install_requires = ['tornado >= 4.0.0'],
     classifiers      = [
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
