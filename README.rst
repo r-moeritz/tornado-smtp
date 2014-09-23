@@ -11,7 +11,7 @@ Usage
     import tornado.web
     from tornado import gen
     from email.message import EmailMessage
-    from tornado_smtp.client import TorndoSMTP
+    from tornado_smtp.client import TornadoSMTP
 
     class MailHandler(tornado.web.RequestHandler):
         @gen.coroutine
@@ -26,7 +26,6 @@ Usage
             msg['From']    = '<sender-address>'
             msg.set_content('Message body')
         
-            smtp = yield self.get_smtp_client()
             smtp.send_message(msg)
 
             self.render('response.html')
