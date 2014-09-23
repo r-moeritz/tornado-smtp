@@ -33,7 +33,7 @@ Usage
 Status
 ------
 
-Alpha. The code hasn't been tested much but seems to work well enough.
+Alpha. The code hasn't been tested much but seems to work well enough. YMMV.
 
 License
 -------
