@@ -2,8 +2,13 @@ import os
 import functools
 from socket import _GLOBAL_DEFAULT_TIMEOUT
 from smtplib import SMTP, SMTP_SSL
-from concurrent.futures import ThreadPoolExecutor
 from tornado import gen
+
+
+try:
+    from concurrent.futures import ThreadPoolExecutor
+except:
+    from futures import ThreadPoolExecutor
 
 
 class TornadoSMTP:
