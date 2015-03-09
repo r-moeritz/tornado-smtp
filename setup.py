@@ -9,7 +9,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name             = 'tornado-smtp',
-    version          = '0.1.0',
+    version          = '0.1.1',
     description      = 'An asynchronous SMTP client for Tornado',
     long_description = long_description,
     url              = 'https://github.com/rmoritz/tornado-smtp',

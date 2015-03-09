@@ -7,10 +7,10 @@ from tornado.options import options
 from tornado.ioloop import IOLoop
 from tornado_smtp.client import TornadoSMTP
 
-FROM_ADDR     = '<your@email.address>'
-SMTP_SERVER   = '<your-smtp.server>'
-SMTP_USER     = '<your_user_name>'
-SMTP_PASSWORD = '<your_password>'
+FROM_ADDR     = 'chessrank@outlook.com'
+SMTP_SERVER   = 'smtp-mail.outlook.com'
+SMTP_USER     = 'chessrank@outlook.com'
+SMTP_PASSWORD = '3Dcff$25631%4dA6'
 
 options.define('port', default=8888, help='run on the given port', type=int)
 
